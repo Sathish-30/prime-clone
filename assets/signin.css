@@ -55,7 +55,7 @@
   border-radius: 3px;
 }
 
-.card button {
+.card #submit {
   width: 288px;
   height: 31px;
   margin-top: 15px;
