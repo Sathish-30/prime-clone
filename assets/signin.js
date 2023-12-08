@@ -1,29 +1,17 @@
-const contactInfoInput = document.getElementById('contact-info');
-const submitButton = document.getElementById('submit-button');
-
-submitButton.addEventListener('click', validateInput);
-
 function validateInput() {
-  const inputValue = contactInfoInput.value.trim();
-  let isValid = false;  
+  var inputField = document.getElementById('inputField');
+  var inputValue = inputField.value.trim();
 
-  // Check for email validity
-  if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z]{2,}$/.test(inputValue)) {
-    isValid = true;
+  // Define regex patterns for email and phone number
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var phoneRegex = /^\d{10}$/; // Assumes a 10-digit phone number; you may need to adjust this based on your requirements
+
+  // Check if the input matches either email or phone number pattern
+  if (emailRegex.test(inputValue)) {
+    form.action = "../index.html";
+  } else if (phoneRegex.test(inputValue)) {
+    form.action = "../index.html";
   } else {
-    // Check for phone number validity (replace with your desired phone number format)
-    const phoneNumberRegex = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/;
-    if (phoneNumberRegex.test(inputValue)) {
-      isValid = true;
-    }
+      alert('Invalid Email or Phone Number');
   }
-
-  if (!isValid) {
-    alert('Please enter a valid email address or phone number.');
-    return;
-  }
-
-  // Submit form or perform your desired action
-  console.log('Input valid!');
-  // ...
 }

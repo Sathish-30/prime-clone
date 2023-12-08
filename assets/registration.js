@@ -14,7 +14,7 @@ function registration() {
     console.log("This is a Valid Number");
     flag = true;
   } else {
-    console.log("Enter a Valid Number");
+    alert("Enter a Valid Number");
     return false;
   }
 
