@@ -9,7 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Foldit:wght@100;200;300;400;500;600;700;800;900&display=swap"rel="stylesheet"/>
     <link rel="stylesheet" type="text/css" href="../assets/registration.css">
-    <script src="../assets/registration.js"></script>
 </head>
 <body>
   <section>
@@ -19,9 +18,9 @@
     </div>
     <div class="card">
       <h1>Create Account</h1><br>
-      <div class="form">
+      <form id="form" method="post" action="../index.html">
         <label for="name">Your name</label>
-        <input type="text" id="name" placeholder="First and last name"><br>
+        <input type="text" id="name" name="name" placeholder="First and last name" required><br>
         <label for="num">Mobile number</label><br>
         <select name="countryCode" id="ccode">
           <option data-countryCode="GB" value="44" selected>Norway (+47)</option>
@@ -243,22 +242,21 @@
             <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
           </optgroup>
         </select>
-        <input type="tel" id="num" name="num" placeholder="Mobile number" pattern="[0-9]{10}" required/><br>
+        <input type="text" id="num" name="num" placeholder="Mobile number" required/><br>
         <a href="#" class="ic" id="mail1">Use your email instead </a>
         <br>
         <label for="pass">Password</label>
-        <input type="Password" name="pass" id="pass" placeholder="At least 6 characters"><br>
+        <input type="Password" name="pass" id="pass" placeholder="At least 6 characters" required><br>
         <img src="../assets/images/info.png" alt="note" id="info"><p id="inf">Passwords must be at least 6 characters.</p>
         <p>To verify your number, we will send you a text message with a temporary code. Message and data rates may apply.</p><br><br>
         <p>We will send you a text to verify your phone. Message and Data rates may apply.</p>
-        <input type="submit" value="Continue" id="submit" class="sub">
-    
-      </div>
+        <button id="btn">Continue</button>
+      </form>
       <div>
       	<p id="acc">Already have an account? <a href="../pages/signin.html" class="ic">Sign in </a> </p>
       </div>
   </section>
-</body>
+
 <footer>
       <div class="links">
         <a href="#">Terms and Privacy Notice</a>
@@ -267,4 +265,7 @@
       </div>
       <p>© 1996-2023, Amazon.com, Inc. or its affiliates</p>
     </footer>
+    <script src="../assets/registration.js"></script>
+  </body>
+  
 </html>
