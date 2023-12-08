@@ -1,21 +1,31 @@
+const form = document.getElementById("form");
+const btn = document.getElementById("btn");
+
 function registration() {
-
-    let x = document.forms["form"]["name"].value;
-    if (x == "") {
-      alert("Name must be filled out");
-      return false;
-    }
-
-    let num = document.getElementById("num").value;
-    alert((num.length === 10 && /^[0-9]+[0-9]{1,9}$/) ? "This is a Valid Number" : "Enter a Valid Number");
-    
-    password = document.forms["form"]["pass"].value;
-    if(password=="")
-    {
-     alert("please enter your password")
-    }
-
+  const name = document.forms["form"]["name"].value;
+  let flag = false;
+  if (name === "") {
+    alert("Name must be filled out");
+    return false;
   }
 
-const btn = document.getElementById("btn");
-btn.addEventListener("click" , registration);
+  const num = document.getElementById("num").value;
+  if (num.length === 10 && /^[0-9]+[0-9]{1,9}$/) {
+    console.log("This is a Valid Number");
+    flag = true;
+  } else {
+    console.log("Enter a Valid Number");
+    return false;
+  }
+
+  const password = document.forms["form"]["pass"].value;
+  if (password === "" || password.length < 6) {
+    alert("please enter the password with at least 6 digits");
+    return false;
+  }
+  if (flag) {
+    form.action = "../index.html";
+  }
+}
+
+btn.addEventListener("click", registration);
