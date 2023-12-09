@@ -10,7 +10,7 @@ function validateInput() {
   if (emailRegex.test(inputValue)) {
     form.action = "https://prime-clone-sigma.vercel.app/";
   } else if (phoneRegex.test(inputValue)) {
-    form.action = "../index.html";
+    form.action = "https://prime-clone-sigma.vercel.app/";
   } else {
       alert('Invalid Email or Phone Number');
   }
