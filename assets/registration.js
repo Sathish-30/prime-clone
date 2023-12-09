@@ -24,7 +24,7 @@ function registration() {
     return false;
   }
   if (flag) {
-    form.action = "../index.html";
+    form.action = "../home.html";
   }
 }
 
