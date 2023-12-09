@@ -8,7 +8,7 @@ function validateInput() {
 
   // Check if the input matches either email or phone number pattern
   if (emailRegex.test(inputValue)) {
-    form.action = "../index.html";
+    form.action = "https://prime-clone-sigma.vercel.app/";
   } else if (phoneRegex.test(inputValue)) {
     form.action = "../index.html";
   } else {
